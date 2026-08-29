@@ -1,6 +1,63 @@
-// (SimpleFunction.test)
+@256
+D=A
+@SP
+M=D
+// call Sys.init 0
+@return_addr_[1]
+D=A
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@LCL
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@ARG
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THIS
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@THAT
+D=M
+@SP
+A=M
+M=D
+@SP
+M=M+1
+@SP
+D=M
+@5
+D=D-A
+@0
+D=D-A
+@ARG
+M=D
+@SP
+D=M
+@LCL
+M=D
+@Sys.init
+0;JMP
+(@return_addr_[1])
+(END)
+@END
+0;JMP
+// function SimpleFunction.test 2
 (SimpleFunction.test)
-
 // push constant 0
 @0
 D=A
@@ -9,7 +66,6 @@ A=M
 M=D
 @SP
 M=M+1
-
 // push constant 0
 @0
 D=A
@@ -18,7 +74,6 @@ A=M
 M=D
 @SP
 M=M+1
-
 // push local 0
 @LCL
 D=M
@@ -30,7 +85,6 @@ A=M
 M=D
 @SP
 M=M+1
-
 // push local 1
 @LCL
 D=M
@@ -42,19 +96,16 @@ A=M
 M=D
 @SP
 M=M+1
-
 // add
 @SP
 AM=M-1
 D=M
 A=A-1
 M=D+M
-
 // not
 @SP
 A=M-1
 M=!M
-
 // push argument 0
 @ARG
 D=M
@@ -66,14 +117,12 @@ A=M
 M=D
 @SP
 M=M+1
-
 // add
 @SP
 AM=M-1
 D=M
 A=A-1
 M=D+M
-
 // push argument 1
 @ARG
 D=M
@@ -85,14 +134,12 @@ A=M
 M=D
 @SP
 M=M+1
-
 // sub
 @SP
 AM=M-1
 D=M
 A=A-1
 M=M-D
-
 // return
 @LCL
 D=M
@@ -115,39 +162,37 @@ M=D
 D=M+1
 @SP
 M=D
-@1
-D=A
 @R13
-A=M-D
+D=M
+@1
+A=D-A
 D=M
 @THAT
 M=D
-@2
-D=A
 @R13
-A=M-D
+D=M
+@2
+A=D-A
 D=M
 @THIS
 M=D
-@3
-D=A
 @R13
-A=M-D
+D=M
+@3
+A=D-A
 D=M
 @ARG
 M=D
-@4
-D=A
 @R13
-A=M-D
+D=M
+@4
+A=D-A
 D=M
 @LCL
 M=D
 @R14
 A=M
 0;JMP
-
-
 (END)
 @END
 0;JMP
